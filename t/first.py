@@ -12,11 +12,15 @@ class operationAdd(operation):
 
 class operationDev(operation):
     def GetResult(self):
-        if(self.numberB!=0):
+        # if(self.numberB!=0):
+        #     return self.numberA /self.numberB
+        # else:
+        #     raise "被除数不能为0"
+        try :
             return self.numberA /self.numberB
-        else:
-            raise "被除数不能为0"
-
+        except Exception,e:
+            print "error:divided by zero"
+            return 0
 class operationMul(operation):
     def GetResult(self):
         return self.numberA*self.numberB
